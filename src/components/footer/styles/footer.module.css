@@ -1,0 +1,23 @@
+.container {
+  background: #000;
+  margin-top: -6em;
+  width: 100%;
+  padding: 2.5rem 1.25rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  line-height: 1.75rem;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding-top: 6rem;
+  }
+
+  .content {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

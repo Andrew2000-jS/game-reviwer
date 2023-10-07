@@ -1,0 +1,23 @@
+.navItem {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.25rem;
+  font-size: 0.8em;
+}
+
+.navItem::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: orange;
+  transition: width 0.25s ease-out;
+}
+
+.navItem:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}

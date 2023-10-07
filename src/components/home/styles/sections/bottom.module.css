@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 5rem;
+}
+
+.genresListContainer {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.genresList {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.genreItem {
+  flex: 0 0 auto;
+  width: 200px;
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem;
+  z-index: 10;
+}
+
+.legendContainer {
+  width: 100%;
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.legend {
+  font-weight: bold;
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .genresList {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: auto; /* Permitirá que las imágenes se ajusten al contenido */
+  }
+
+  .legend {
+    width: 100%;
+  }
+}

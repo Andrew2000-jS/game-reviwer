@@ -5,12 +5,18 @@ import { useFetcher } from '@/hooks'
 import { CardGames } from '@/components'
 
 import styles from '../styles/sections/middle.module.css'
+import Reveal from '@/components/animations/reveal'
 
 function Middle () {
   const { data } = useFetcher<RootGames>({
     query: 'games',
     pageSize: 4
   })
+
+  const variants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: { opacity: 1, y: 0 }
+  }
 
   return (
     <section className="w-full h-full">
@@ -25,25 +31,25 @@ function Middle () {
       </article>
       <article className={styles.content}>
         <div className={styles.gameListContainer}>
-        <div className={styles.gameList}>
-          {data?.results.map((item) => (
-            <CardGames
-              key={item.id}
-              image={item.short_screenshots[0].image}
-              rating={item.rating}
-            />
-          ))}
-        </div>
+          <div className={styles.gameList}>
+            {data?.results.map((item) => (
+              <CardGames
+                key={item.id}
+                image={item.short_screenshots[0].image}
+                rating={item.rating}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="w-full">
+        <Reveal width="100%" variants={variants}>
           <div className={styles.legend}>
             <h3 className="w-full text-2xl font-bold text-center md:w-[50%]">
               Video games where imagination meets interaction, and every player
               becomes a hero.
             </h3>
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.bottom}>
           <h4 className="text-lg text-justify font-bold pb-5">
@@ -59,7 +65,9 @@ function Middle () {
         </div>
 
         <div className="flex justify-center">
-          <Image isBlurred src="/spiderman.jpeg" />
+          <Reveal variants={variants}>
+            <Image isBlurred src="/spiderman.jpeg" />
+          </Reveal>
         </div>
       </article>
     </section>

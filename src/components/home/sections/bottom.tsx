@@ -6,8 +6,14 @@ import Image from 'next/image'
 import { CardGenres } from '@/components'
 
 import styles from '../styles/sections/bottom.module.css'
+import Reveal from '@/components/animations/reveal'
 
 function Bottom () {
+  const variants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   const { data } = useFetcher<RootGenres>({ query: 'genres', pageSize: 6 })
 
   return (
@@ -22,6 +28,7 @@ function Bottom () {
         />
       </article>
       <article className={styles.content}>
+     <Reveal variants={variants}>
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -35,7 +42,9 @@ function Bottom () {
             </p>
           </div>
         </div>
-        <div className={styles.genresListContainer}>
+     </Reveal>
+
+     <div className={styles.genresListContainer}>
           <div className={styles.genresList}>
             {data?.results.map((item) => (
               <div key={item.id} className={styles.genreItem}>

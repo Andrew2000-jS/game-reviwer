@@ -1,7 +1,7 @@
-import './globals.css'
+import { Footer, Nav } from '@/shared'
 import type { Metadata } from 'next'
+import '../shared/styles/globals.css'
 import { Providers } from './providers'
-import { Footer, Nav } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Home',

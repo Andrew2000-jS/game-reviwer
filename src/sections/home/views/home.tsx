@@ -1,8 +1,9 @@
-import { Game, Genres } from '@/modules/games/domain'
-import { Top, Middle, Bottom } from '../components'
-import styles from './styles/home.module.css'
+import { RootGame, RootGenres } from '@/modules/games/domain'
+import { Bottom, Middle, Top } from '../components'
 
-function Home ({ games, genres }: { games: Game, genres: Genres }) {
+import styles from '@/shared/styles/globals.module.css'
+
+function Home ({ games, genres }: { games: RootGame, genres: RootGenres }) {
   return (
     <div className={styles.container}>
       <Top />

@@ -1,1 +1,1 @@
-export * from './gamesRepository'
+export * from './games-repository'

@@ -34,7 +34,7 @@ export default function App () {
 
       <NavbarContent className="hidden sm:flex gap-20" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#" className={styles.navItem}>
+          <Link color="foreground" href="/" className={styles.navItem}>
             Home
           </Link>
         </NavbarItem>
@@ -49,7 +49,7 @@ export default function App () {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className={styles.navItem}>
+          <Link href="/news" className={styles.navItem}>
             News
           </Link>
         </NavbarItem>

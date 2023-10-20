@@ -2,11 +2,11 @@
 
 import { CardGames, Reveal } from '@/shared'
 import { Button, Image } from '@nextui-org/react'
-import { Game } from '@/modules/games/domain'
+import { RootGame } from '@/modules/games/domain'
 
 import styles from './styles/middle.module.css'
 
-function Middle ({ games }: { games: Game }) {
+function Middle ({ games }: { games: RootGame }) {
   const variants = {
     hidden: { opacity: 0, y: 25 },
     visible: { opacity: 1, y: 0 }

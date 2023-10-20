@@ -5,9 +5,9 @@ import { Button } from '@nextui-org/react'
 import Image from 'next/image'
 
 import styles from './styles/bottom.module.css'
-import { Genres } from '@/modules/games/domain'
+import { RootGenres } from '@/modules/games/domain'
 
-function Bottom ({ genres }: { genres: Genres }) {
+function Bottom ({ genres }: { genres: RootGenres }) {
   const variants = {
     hidden: { opacity: 0, y: 25 },
     visible: { opacity: 1, y: 0 }

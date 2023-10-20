@@ -8,6 +8,14 @@ const getGames = async (signal?: AbortSignal) => {
   return data
 }
 
+const getGame = async (id: number, signal?: AbortSignal) => {
+  const apiUrl = `https://api.rawg.io/api/games/${id}`
+  const url = `${apiUrl}?key=${process.env.API_KEY}`
+  const response = await fetch(url, { signal })
+  const data = await response.json()
+  return data
+}
+
 const getGenres = async (signal?: AbortSignal) => {
   const apiUrl = 'https://api.rawg.io/api/genres'
   const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=6`
@@ -19,6 +27,7 @@ const getGenres = async (signal?: AbortSignal) => {
 export const gameRepository = (): GameRepository => {
   return {
     getGames,
-    getGenres
+    getGenres,
+    getGame
   }
 }

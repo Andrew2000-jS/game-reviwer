@@ -3,6 +3,7 @@ import { nextui } from '@nextui-org/react'
 
 const config: Config = {
   content: [
+    '/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
     './src/shared/**/*.{js,ts,jsx,tsx,mdx}',

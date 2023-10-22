@@ -1,12 +1,14 @@
-import React from 'react'
-import styles from '@/shared/styles/globals.module.css'
+import { RootCreator } from '@/modules/creators/domain'
+import { RootPusblisher } from '@/modules/publishers/domain'
 import { Header, Middle } from '../components'
 
-function News () {
+import styles from '@/shared/styles/globals.module.css'
+
+function News ({ creators, publishers }: { creators: RootCreator, publishers: RootPusblisher }) {
   return (
     <div className={styles.container}>
       <Header />
-      <Middle />
+      <Middle creators={creators} publishers={publishers}/>
     </div>
   )
 }

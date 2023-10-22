@@ -26,7 +26,7 @@ function Middle ({ games }: { games: RootGame }) {
       <article className={styles.content}>
         <div className={styles.gameListContainer}>
           <div className={styles.gameList}>
-            {games?.results.map((item) => (
+            {games.results.map((item) => (
               <CardGames
                 key={item.id}
                 image={item.short_screenshots[0].image}

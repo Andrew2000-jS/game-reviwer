@@ -1,11 +1,12 @@
-import { Footer, Nav } from '@/shared'
 import type { Metadata } from 'next'
-import '../shared/styles/globals.css'
 import { Providers } from './providers'
+import { Footer, Nav } from '@/shared'
+
+import '../styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Home page'
+  title: 'Game Reviwer',
+  description: 'Unlocking Game Worlds, One Review at a Time'
 }
 
 export default function RootLayout ({

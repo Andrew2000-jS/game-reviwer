@@ -7,7 +7,66 @@
 }
 
 .left {
+  width: 100%;
+  flex: 2;
 }
 
 .right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.rightContainer {
+  flex: 1;
+}
+
+.right > div {
+  overflow-y: scroll;
+  padding-right: 1em;
+  height: 55em;
+}
+
+.right > div::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.right > div::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.right > div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.right > div::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+.right > div::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .rightContainer {
+    width: 100%;
+    padding-bottom: 10em;
+  }
+  .right > div {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: auto;
+    gap: 1em;
+  }
+
+  .creatorsList {
+  }
 }

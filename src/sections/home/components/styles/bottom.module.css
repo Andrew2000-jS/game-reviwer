@@ -53,7 +53,7 @@
   .genresList {
     overflow-x: scroll;
     overflow-y: hidden;
-    width: auto; /* Permitirá que las imágenes se ajusten al contenido */
+    width: auto;
   }
 
   .legend {

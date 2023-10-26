@@ -1,8 +1,8 @@
 import { RootCreator, CreatorRepository } from '../domain'
 
 export interface GetCreators {
-  (repository: CreatorRepository, signal?: AbortSignal): Promise<RootCreator>
+  (repository: CreatorRepository, pageSize: number, signal?: AbortSignal): Promise<RootCreator>
 }
 
-export const getCreators: GetCreators = async (repository, signal) =>
-  await repository.getCreators(signal)
+export const getCreators: GetCreators = async (repository, pageSize, signal) =>
+  await repository.getCreators(pageSize, signal)

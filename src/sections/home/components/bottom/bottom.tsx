@@ -5,7 +5,7 @@ import { CardGenres, Reveal } from '@/shared'
 import { Button } from '@nextui-org/react'
 import Image from 'next/image'
 
-import styles from './styles/bottom.module.css'
+import styles from './styles/styles.module.css'
 
 function Bottom ({ genres }: { genres: RootGenres }) {
   const variants = {

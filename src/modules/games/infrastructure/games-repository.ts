@@ -1,8 +1,8 @@
 import { GameRepository } from '../domain'
 
-const getGames = async (signal?: AbortSignal) => {
+const getGames = async (pageSize: number, signal?: AbortSignal) => {
   const apiUrl = 'https://api.rawg.io/api/games'
-  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=4`
+  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=${pageSize}`
   const response = await fetch(url, { signal })
   const data = await response.json()
   return data
@@ -16,9 +16,9 @@ const getGame = async (id: number, signal?: AbortSignal) => {
   return data
 }
 
-const getGenres = async (signal?: AbortSignal) => {
+const getGenres = async (pageSize: number, signal?: AbortSignal) => {
   const apiUrl = 'https://api.rawg.io/api/genres'
-  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=6`
+  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=${pageSize}`
   const response = await fetch(url, { signal })
   const data = await response.json()
   return data

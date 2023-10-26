@@ -2,6 +2,7 @@
 
 import { Pusblisher } from '@/modules/publishers/domain'
 import { Card, CardHeader, Button, Image, CardFooter } from '@nextui-org/react'
+import Link from 'next/link'
 
 function CardPublishers ({ publisher }: { publisher: Pusblisher }) {
   return (
@@ -35,9 +36,11 @@ function CardPublishers ({ publisher }: { publisher: Pusblisher }) {
             <p className="text-tiny text-white/60">The best of {publisher.name}</p>
           </div>
         </div>
+        <Link href={`/publishers/${publisher.id}`}>
         <Button radius="full" size="sm">
           See more
         </Button>
+        </Link>
       </CardFooter>
     </Card>
   )

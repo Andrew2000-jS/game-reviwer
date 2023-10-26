@@ -1,0 +1,11 @@
+.platformsContainer {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.platformsList {
+  display: flex;
+  justify-content: space-evenly;
+}

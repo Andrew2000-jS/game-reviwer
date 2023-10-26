@@ -1,0 +1,22 @@
+.description {
+  max-height: 7em;
+  overflow-y: scroll;
+}
+
+.platformsContainer {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.platformsList {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 5em;
+  }
+}

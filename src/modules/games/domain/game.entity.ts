@@ -21,7 +21,7 @@ export type Game = {
   background_image: string
   rating: number
   rating_top: number
-  ratings: any[]
+  ratings: Ratings[]
   ratings_count: number
   reviews_text_count: string
   added: number
@@ -49,6 +49,7 @@ export type GameDetails = {
   name: string
   name_original: string
   description: string
+  description_raw: string
   metacritic: number
   metacritic_platforms: MetacriticPlatform[]
   released: string
@@ -59,7 +60,7 @@ export type GameDetails = {
   website: string
   rating: number
   rating_top: number
-  ratings: any
+  ratings: Ratings[]
   reactions: any
   added: number
   added_by_status: any
@@ -86,12 +87,27 @@ export type GameDetails = {
   game_series_count: number
   esrb_rating: EsrbRating
   platforms: Platform[]
+  parent_platforms: ParentPlatforms[]
+  developers: Developers[]
+  tags: Tags[]
+}
+
+type Developers = {
+  id: number
+  games_count: number
+  image_background: string
+  name: string
+  slug: string
 }
 
 type Platform = {
   platform: Esrbrating
   released_at: string
   requirements: Requirements
+}
+
+type ParentPlatforms = {
+  platform: Esrbrating
 }
 
 type Requirements = {
@@ -119,4 +135,19 @@ type EsrbRating = {
   id: number
   slug: string
   name: string
+}
+
+type Ratings = {
+  id: number
+  count: number
+  percent: number
+  title: string
+}
+
+type Tags = {
+  id: number
+  image_background: string
+  language: string
+  name: string
+  slug: string
 }

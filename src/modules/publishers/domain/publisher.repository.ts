@@ -1,5 +1,6 @@
-import { RootPusblisher } from './publisher.entity'
+import { RootPusblisher, Detail } from './publisher.entity'
 
 export interface PusblisherRepository {
-  getPublishers: (signal?: AbortSignal) => Promise<RootPusblisher>
+  getPublishers: (pageSize: number, signal?: AbortSignal) => Promise<RootPusblisher>
+  getPublisher: (id: number, signal?: AbortSignal) => Promise<Detail>
 }

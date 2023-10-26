@@ -26,4 +26,30 @@ export type Details = {
   rating: string
   rating_top: number
   updated: string
+  positions: Positon[]
+  platforms: Platforms
+}
+
+type Positon = {
+  id: number
+  name: string
+  slug: string
+}
+
+type Platforms = {
+  count: number
+  results: Results[]
+  total: number
+}
+
+type Results = {
+  count: number
+  percent: number
+  platform: Platform
+}
+
+type Platform = {
+  id: number
+  name: string
+  slug: string
 }

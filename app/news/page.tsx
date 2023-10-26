@@ -9,8 +9,8 @@ async function NewsPage () {
   const creatorsRepository = creatorRepository()
   const publisherRepository = pusblisherRepository()
 
-  const publishers = await getPublishers(publisherRepository)
-  const creators = await getCreators(creatorsRepository)
+  const publishers = await getPublishers(publisherRepository, 3)
+  const creators = await getCreators(creatorsRepository, 7)
 
   return (
     <main className='w-full'>

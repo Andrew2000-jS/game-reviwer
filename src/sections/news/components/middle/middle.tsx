@@ -1,5 +1,5 @@
 import { RootCreator } from '@/modules/creators/domain'
-import styles from './styles/middle.module.css'
+import styles from './styles/styles.module.css'
 import { CardCreators, CardPublishers } from '@/shared'
 import { RootPusblisher } from '@/modules/publishers/domain'
 
@@ -25,7 +25,7 @@ function Middle ({
         <div className={styles.right}>
           <div className={styles.creatorsList}>
             {creators.results.map((creator) => (
-              <CardCreators creator={creator} key={creator.id} />
+                <CardCreators creator={creator} key={creator.id} />
             ))}
           </div>
         </div>

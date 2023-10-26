@@ -1,7 +1,7 @@
 import { GameDetails, RootGame, RootGenres } from './game.entity'
 
 export interface GameRepository {
-  getGames: (signal?: AbortSignal) => Promise<RootGame>
+  getGames: (pageSize: number, signal?: AbortSignal) => Promise<RootGame>
   getGame: (id: number, signal?: AbortSignal) => Promise<GameDetails>
-  getGenres: (signal?: AbortSignal) => Promise<RootGenres>
+  getGenres: (pageSize: number, signal?: AbortSignal) => Promise<RootGenres>
 }

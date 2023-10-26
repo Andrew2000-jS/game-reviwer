@@ -25,6 +25,7 @@
       "@typescript-eslint/no-confusing-void-expression": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/prefer-function-type": "off",
-      "@typescript-eslint/consistent-type-imports": "off"
+      "@typescript-eslint/consistent-type-imports": "off",
+      "multiline-ternary": "off"
     }
 }

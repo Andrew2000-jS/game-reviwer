@@ -2,7 +2,7 @@
 
 import { Button } from '@nextui-org/react'
 import Image from 'next/image'
-import styles from './styles/top.module.css'
+import styles from './styles/styles.module.css'
 import { Reveal } from '@/shared'
 
 function Top () {

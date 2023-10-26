@@ -4,7 +4,7 @@ import { CardGames, Reveal } from '@/shared'
 import { Button, Image } from '@nextui-org/react'
 import { RootGame } from '@/modules/games/domain'
 
-import styles from './styles/middle.module.css'
+import styles from './styles/styles.module.css'
 
 function Middle ({ games }: { games: RootGame }) {
   const variants = {
@@ -31,6 +31,7 @@ function Middle ({ games }: { games: RootGame }) {
                 key={item.id}
                 image={item.short_screenshots[0].image}
                 rating={item.rating}
+                id={item.id}
               />
             ))}
           </div>

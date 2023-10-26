@@ -4,8 +4,8 @@ import { gameRepository } from '@/modules/games/infrastructure'
 
 async function HomePage () {
   const repository = gameRepository()
-  const games = await getGames(repository)
-  const genres = await getGenres(repository)
+  const games = await getGames(repository, 4)
+  const genres = await getGenres(repository, 6)
 
   return (
     <main className='w-full'>

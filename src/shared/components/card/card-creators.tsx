@@ -2,13 +2,14 @@
 
 import { Creator } from '@/modules/creators/domain'
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react'
+import Link from 'next/link'
 
 import styles from './styles/card-creators.module.css'
 
 function CardCreators ({ creator }: { creator: Creator }) {
   return (
-    <div className="mb-5 sm:grid">
-      <Card className={styles.content} shadow="sm" isPressable onPress={() => console.log('item pressed')}>
+    <Link href={`/creators/${creator.id}`} className="mb-5 sm:grid">
+      <Card className={styles.content} shadow="sm">
         <CardBody className="overflow-visible p-0">
           <Image
             shadow="sm"
@@ -24,7 +25,7 @@ function CardCreators ({ creator }: { creator: Creator }) {
             <p className="text-default-500">{creator.games_count}</p>
         </CardFooter>
       </Card>
-    </div>
+    </Link>
   )
 }
 

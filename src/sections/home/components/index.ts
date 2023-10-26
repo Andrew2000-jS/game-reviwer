@@ -1,3 +1,3 @@
-export { default as Bottom } from './bottom'
-export { default as Middle } from './middle'
-export { default as Top } from './top'
+export * from './bottom'
+export * from './middle'
+export * from './top'

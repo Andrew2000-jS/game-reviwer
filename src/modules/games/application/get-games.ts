@@ -1,8 +1,8 @@
 import { RootGame, GameRepository } from '../domain'
 
 export interface GetGames {
-  (repository: GameRepository, signal?: AbortSignal): Promise<RootGame>
+  (repository: GameRepository, pageSize: number, signal?: AbortSignal): Promise<RootGame>
 }
 
-export const getGames: GetGames = async (repository, signal) =>
-  await repository.getGames(signal)
+export const getGames: GetGames = async (repository, pageSize, signal) =>
+  await repository.getGames(pageSize, signal)

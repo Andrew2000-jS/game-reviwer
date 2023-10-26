@@ -1,8 +1,16 @@
 import { PusblisherRepository } from '../domain'
 
-const getPublishers = async (signal?: AbortSignal) => {
+const getPublishers = async (pageSize: number, signal?: AbortSignal) => {
   const apiUrl = 'https://api.rawg.io/api/publishers'
-  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=3`
+  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=${pageSize}`
+  const response = await fetch(url, { signal })
+  const data = await response.json()
+  return data
+}
+
+const getPublisher = async (id: number, signal?: AbortSignal) => {
+  const apiUrl = `https://api.rawg.io/api/publishers/${id}`
+  const url = `${apiUrl}?key=${process.env.API_KEY}`
   const response = await fetch(url, { signal })
   const data = await response.json()
   return data
@@ -10,6 +18,7 @@ const getPublishers = async (signal?: AbortSignal) => {
 
 export const pusblisherRepository = (): PusblisherRepository => {
   return {
-    getPublishers
+    getPublishers,
+    getPublisher
   }
 }

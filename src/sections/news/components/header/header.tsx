@@ -1,5 +1,4 @@
-import React from 'react'
-import SearchInput from './search-input'
+import SearchInput from '../search-input/search-input'
 
 function Header () {
   return (

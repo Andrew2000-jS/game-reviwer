@@ -12,3 +12,12 @@ export type Pusblisher = {
   games_count: number
   image_background: string
 }
+
+export type Detail = {
+  id: number
+  name: string
+  slug: string
+  games_count: number
+  image_background: string
+  description: string
+}

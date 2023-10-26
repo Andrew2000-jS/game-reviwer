@@ -1,8 +1,8 @@
 import { CreatorRepository } from '../domain'
 
-const getCreators = async (signal?: AbortSignal) => {
+const getCreators = async (pageSize: number, signal?: AbortSignal) => {
   const apiUrl = 'https://api.rawg.io/api/creators'
-  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=7`
+  const url = `${apiUrl}?key=${process.env.API_KEY}&page_size=${pageSize}`
   const response = await fetch(url, { signal })
   const data = await response.json()
   return data

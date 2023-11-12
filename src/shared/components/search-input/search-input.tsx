@@ -3,7 +3,7 @@
 import { Input } from '@nextui-org/react'
 import { BiSearch } from 'react-icons/bi'
 
-function SearchInput () {
+function SearchInput ({ placeholder = 'Type to search...' }: { placeholder?: string }) {
   return <Input
   isClearable
   radius="lg"
@@ -28,7 +28,7 @@ function SearchInput () {
       '!cursor-text'
     ]
   }}
-  placeholder="Type to search..."
+  placeholder={placeholder}
   startContent={
     <BiSearch />
   }

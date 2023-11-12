@@ -1,11 +1,17 @@
 import { Home } from '@/sections'
-import { getGames, getGenres } from '@/modules/games/application'
+
+import { getGames } from '@/modules/games/application'
 import { gameRepository } from '@/modules/games/infrastructure'
 
+import { genresRepository } from '@/modules/genres/infrastructure'
+import { getGenres } from '@/modules/genres/application'
+
 async function HomePage () {
-  const repository = gameRepository()
-  const games = await getGames(repository, 4)
-  const genres = await getGenres(repository, 6)
+  const gameRepo = gameRepository()
+  const genreRepo = genresRepository()
+
+  const games = await getGames(gameRepo, 4)
+  const genres = await getGenres(genreRepo, 6)
 
   return (
     <main className='w-full'>

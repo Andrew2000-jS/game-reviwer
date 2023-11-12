@@ -1,11 +1,11 @@
-import { GameDetails, GameRepository } from '../domain'
+import { Detail, GameRepository } from '../domain'
 
 export interface GetGame {
   (
     repository: GameRepository,
     id: number,
     signal?: AbortSignal
-  ): Promise<GameDetails>
+  ): Promise<Detail>
 }
 
 export const getGame: GetGame = async (repository, id, signal) =>

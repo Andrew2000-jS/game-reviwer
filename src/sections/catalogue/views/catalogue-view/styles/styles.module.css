@@ -1,0 +1,24 @@
+.content {
+  width: 100%;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "list list list list"
+    "list list list list";
+}
+
+.header {
+  grid-area: header;
+  width: 100%;
+}
+
+.lateral {
+  grid-area: lateral;
+  width: auto;
+}
+
+.list {
+  grid-area: list;
+  width: auto;
+}

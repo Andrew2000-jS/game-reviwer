@@ -14,7 +14,7 @@ export type Creator = {
   games_count: number
 }
 
-export type Details = {
+export type Detail = {
   id: number
   name: string
   slug: string

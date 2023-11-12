@@ -4,6 +4,7 @@ import { Button } from '@nextui-org/react'
 import Image from 'next/image'
 import styles from './styles/styles.module.css'
 import { Reveal } from '@/shared'
+import Link from 'next/link'
 
 function Top () {
   return (
@@ -25,7 +26,9 @@ function Top () {
             game reviews, ratings, and expert analysis. Level up your gaming
             experience with us!
           </p>
-          <Button color="primary">See Our Catalogue</Button>
+          <Link href="/catalogue">
+            <Button color="primary">See Our Catalogue</Button>
+          </Link>
         </Reveal>
       </article>
       <article className="hidden md:block relative">

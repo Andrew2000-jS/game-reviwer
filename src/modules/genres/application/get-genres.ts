@@ -1,7 +1,7 @@
-import { RootGenres, GameRepository } from '../domain'
+import { RootGenres, GenreRepository } from '../domain'
 
 export interface GetGenres {
-  (repository: GameRepository, pageSize: number, signal?: AbortSignal): Promise<RootGenres>
+  (repository: GenreRepository, pageSize: number, signal?: AbortSignal): Promise<RootGenres>
 }
 
 export const getGenres: GetGenres = async (repository, pageSize, signal) =>

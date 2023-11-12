@@ -1,11 +1,11 @@
-import { Details, CreatorRepository } from '../domain'
+import { Detail, CreatorRepository } from '../domain'
 
 export interface GetCreator {
   (
     repository: CreatorRepository,
     id: number,
     signal?: AbortSignal
-  ): Promise<Details>
+  ): Promise<Detail>
 }
 
 export const getCreator: GetCreator = async (repository, id, signal) =>

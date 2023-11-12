@@ -1,4 +1,4 @@
-import SearchInput from '../search-input/search-input'
+import SearchInput from '@/shared/components/search-input/search-input'
 
 function Header () {
   return (

@@ -5,10 +5,10 @@ import { getCreator } from '@/modules/creators/application'
 import { creatorRepository } from '@/modules/creators/infrastructure'
 import { CreatorDetailView } from '@/sections/detail/views'
 import { useEffect, useState } from 'react'
-import { Details } from '@/modules/creators/domain'
+import { Detail } from '@/modules/creators/domain'
 
 function GamesDetailPage () {
-  const [creator, setCreator] = useState<Details | null>(null)
+  const [creator, setCreator] = useState<Detail | null>(null)
   const { id } = useParams()
   const repository = creatorRepository()
 

@@ -6,7 +6,7 @@ import { useReveal } from '@/shared'
 
 interface Props {
   children: React.ReactNode
-  width?: 'fit-content' | '100%'
+  width?: 'fit-content' | string
   variants: Variants
   overflow?: string
 }

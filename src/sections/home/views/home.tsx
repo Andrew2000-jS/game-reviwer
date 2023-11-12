@@ -1,4 +1,5 @@
-import { RootGame, RootGenres } from '@/modules/games/domain'
+import { RootGame } from '@/modules/games/domain'
+import { RootGenres } from '@/modules/genres/domain'
 import { Bottom, Middle, Top } from '../components'
 
 import styles from '@/shared/styles/globals.module.css'

@@ -5,13 +5,6 @@ export type RootGame = {
   results: Game[]
 }
 
-export type RootGenres = {
-  count: number
-  next: string
-  previous: string
-  results: Genres[]
-}
-
 export type Game = {
   id: number
   slug: string
@@ -35,36 +28,15 @@ export type Game = {
   short_screenshots: ScreenShot[]
 }
 
-export type Genres = {
-  id: number
-  name: string
-  slug: string
-  games_count: number
-  image_background: string
-}
-
-export type GameDetails = {
-  id: number
-  slug: string
-  name: string
+export type Detail = Game & {
   name_original: string
   description: string
   description_raw: string
   metacritic: number
   metacritic_platforms: MetacriticPlatform[]
-  released: string
-  tba: boolean
-  updated: string
-  background_image: string
   background_image_additional: string
   website: string
-  rating: number
-  rating_top: number
-  ratings: Ratings[]
   reactions: any
-  added: number
-  added_by_status: any
-  playtime: number
   screenshots_count: number
   movies_count: number
   creators_count: number
@@ -77,7 +49,6 @@ export type GameDetails = {
   reddit_count: number
   twitch_count: string
   youtube_count: string
-  reviews_text_count: string
   ratings_count: number
   suggestions_count: number
   alternative_names: string[]
@@ -85,8 +56,6 @@ export type GameDetails = {
   parents_count: number
   additions_count: number
   game_series_count: number
-  esrb_rating: EsrbRating
-  platforms: Platform[]
   parent_platforms: ParentPlatforms[]
   developers: Developers[]
   tags: Tags[]
@@ -129,12 +98,6 @@ type ScreenShot = {
 type MetacriticPlatform = {
   metascore: number
   url: string
-}
-
-type EsrbRating = {
-  id: number
-  slug: string
-  name: string
 }
 
 type Ratings = {

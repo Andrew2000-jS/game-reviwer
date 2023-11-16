@@ -25,7 +25,7 @@ export default function Slider ({ data = [] }: { data: any[] }) {
             <Image
               src={backgroundImage}
               alt={name}
-              key={idx}
+              key={`${name}-${idx}`}
               width={1000}
               height={500}
               className={slide === idx ? styles.slide : 'hidden'}

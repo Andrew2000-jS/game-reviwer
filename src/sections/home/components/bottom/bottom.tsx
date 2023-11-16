@@ -1,6 +1,6 @@
 'use client'
 
-import { RootGenres } from '@/modules/games/domain'
+import { RootGenres } from '@/modules/genres/domain'
 import { CardGenres, Reveal } from '@/shared'
 import { Button } from '@nextui-org/react'
 import Image from 'next/image'
@@ -43,7 +43,7 @@ function Bottom ({ genres }: { genres: RootGenres }) {
 
      <div className={styles.genresListContainer}>
           <div className={styles.genresList}>
-            {genres?.results.map((item) => (
+            {genres?.results.map((item: any) => (
               <div key={item.id} className={styles.genreItem}>
                 <CardGenres
                   id={item.id}

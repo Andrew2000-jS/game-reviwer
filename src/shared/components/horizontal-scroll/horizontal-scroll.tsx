@@ -8,28 +8,34 @@ import Link from 'next/link'
 interface Props {
   data: any[]
   onScroll?: any
+  href: string
+  width: string
+  height: string
+  textColor?: string
+  isCreator?: boolean
+  imgRadius?: 'sm' | 'none' | 'md' | 'lg' | 'full'
 }
 
 // eslint-disable-next-line react/display-name
-const HorizontalScroll = forwardRef<HTMLDivElement, Props>(({ data = [], onScroll }, ref) => {
+const HorizontalScroll = forwardRef<HTMLDivElement, Props>(({ data = [], href, width, height, onScroll, textColor = '#fff', isCreator = false, imgRadius = 'sm' }, ref) => {
   return (
     <div className={styles.container} onScroll={onScroll} >
-      <div className={`flex w-full gap-5 ${styles.scrollContainer}`} ref={ref}>
-        {data.map(({ background_image: backgroundImage, name, id }, idx) => (
+      <div className={`flex w-full gap-5 ${styles.scrollContainer} ${onScroll ? 'overflow-x-hidden' : 'overflow-x-auto'}`} ref={ref}>
+        {data.map(({ background_image: backgroundImage, image_background: imageBackground, name, id, image }, idx) => (
           <Link
-            href={`/games/${id}`}
+            href={`/${href}/${id}`}
             key={idx}
             className="flex flex-col cursor-pointer"
           >
             <Image
-              src={backgroundImage}
+              src={isCreator ? image : backgroundImage || imageBackground}
               width={300}
               alt={name}
-              radius="sm"
+              radius={imgRadius}
               isZoomed
-              className={styles.img}
+              className={`object-cover w-[${width}] h-[${height}]`}
             />
-            <p className="pt-2 w-[250px]">{name}</p>
+            <p className={`pt-2 w-[${width}] text-[${textColor}]`}>{name}</p>
           </Link>
         ))}
       </div>

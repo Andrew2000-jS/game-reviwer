@@ -1,6 +1,6 @@
 'use client'
 
-import { GameDetails } from '@/modules/games/domain'
+import { Detail } from '@/modules/games/domain'
 import {
   Card,
   CardHeader,
@@ -14,7 +14,7 @@ import styles from './styles/styles.module.css'
 import GameSkeleton from './game-skeleton'
 import { renderStars } from '@/shared'
 
-function GameDetail ({ game }: { game: GameDetails | null }) {
+function GameDetail ({ game }: { game: Detail | null }) {
   const parseDescription = game?.description_raw.replace(/Español[\s\S]*/, '')
 
   return (

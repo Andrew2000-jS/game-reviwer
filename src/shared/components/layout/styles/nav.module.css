@@ -12,7 +12,7 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: orange;
+  background-color: #006fee;
   transition: width 0.25s ease-out;
 }
 

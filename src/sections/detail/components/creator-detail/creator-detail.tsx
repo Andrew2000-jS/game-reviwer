@@ -7,13 +7,13 @@ import {
   Button
 } from '@nextui-org/react'
 
-import { Details } from '@/modules/creators/domain'
+import { Detail } from '@/modules/creators/domain'
 import { renderStars } from '@/shared'
 import CreatorSkeleton from './creator-skeleton'
 
 import styles from './styles/styles.module.css'
 
-function CreatorDetail ({ creator }: { creator: Details }) {
+function CreatorDetail ({ creator }: { creator: Detail }) {
   return (
     <>
       {!creator ? (

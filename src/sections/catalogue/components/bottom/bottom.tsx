@@ -1,7 +1,12 @@
 'use client'
 
 import { BottomInterface } from '../../types'
-import { HorizontalScroll, VerticalList } from '@/shared'
+import {
+  HorizontalScroll,
+  ScrollSkeleton,
+  VerticalList,
+  VerticalSkeleton
+} from '@/shared'
 import { GoChevronRight } from 'react-icons/go'
 
 import styles from '../../styles/styles.module.css'
@@ -25,7 +30,11 @@ function bottom ({
             </Button>
           </div>
           <div>
-            {loaders[0] ? <h1>Loading...</h1> : <VerticalList items={genres} />}
+            {loaders[0] ? (
+              <VerticalSkeleton />
+            ) : (
+              <VerticalList items={genres} />
+            )}
           </div>
         </div>
         <div className="flex-1 border-r-1 border-r-gray-600 pr-5">
@@ -36,7 +45,11 @@ function bottom ({
             </Button>
           </div>
           <div>
-            {loaders[1] ? <h1>Loading...</h1> : <VerticalList items={stores} />}
+            {loaders[1] ? (
+              <VerticalSkeleton />
+            ) : (
+              <VerticalList items={stores} />
+            )}
           </div>
         </div>
         <div className="flex-1">
@@ -48,7 +61,7 @@ function bottom ({
           </div>
           <div>
             {loaders[2] ? (
-              <h1>Loading...</h1>
+              <VerticalSkeleton />
             ) : (
               <VerticalList items={platforms} />
             )}
@@ -66,7 +79,7 @@ function bottom ({
         </div>
         <div>
           {loaders[3] ? (
-            <h1>LOading...</h1>
+            <ScrollSkeleton height="250px" width="250px" />
           ) : (
             <HorizontalScroll
               data={creators}

@@ -7,26 +7,30 @@ import styles from './styles/styles.module.css'
 
 interface Props {
   onScroll?: any
+  width: string
+  height: string
 }
 
 // eslint-disable-next-line react/display-name
-const ScrollSkeleton = forwardRef<HTMLDivElement, Props>(({ onScroll }, ref) => {
-  const data = [1, 2, 3, 4, 5]
+const ScrollSkeleton = forwardRef<HTMLDivElement, Props>(
+  ({ onScroll, width, height }, ref) => {
+    const data = [1, 2, 3, 4, 5]
 
-  return (
-    <div className={styles.container} onScroll={onScroll} >
-    <div className={`flex w-full gap-5 ${styles.scrollContainer}`} ref={ref}>
-      {data.map((_, idx) => (
+    return (
+      <div className={styles.container} onScroll={onScroll}>
         <div
-          key={idx}
-          className="flex flex-col"
+          className={`flex w-full gap-5 ${styles.scrollContainer} overflow-x-hidden`}
+          ref={ref}
         >
-          <Skeleton className='w-[250px] h-[300px] rounded-lg'/>
+          {data.map((_, idx) => (
+            <div key={idx} className="flex flex-col">
+              <Skeleton className='rounded-lg' style={{ width, height }}/>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-  )
-})
+      </div>
+    )
+  }
+)
 
 export default ScrollSkeleton

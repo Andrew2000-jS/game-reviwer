@@ -6,7 +6,7 @@ function SliderSkeleton () {
   const data = [1, 2, 3]
   return (
     <div className={styles.carousel}>
-      <div className="flex w-[70%] mt-5">
+      <div className="flex w-[70%]">
         <>
           <Skeleton className="w-[100%] h-[450px] rounded-lg" />
         </>

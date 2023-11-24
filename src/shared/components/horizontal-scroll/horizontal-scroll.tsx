@@ -20,7 +20,7 @@ interface Props {
 const HorizontalScroll = forwardRef<HTMLDivElement, Props>(({ data = [], href, width, height, onScroll, textColor = '#fff', isCreator = false, imgRadius = 'sm' }, ref) => {
   return (
     <div className={styles.container} onScroll={onScroll} >
-      <div className={`flex w-full gap-5 ${styles.scrollContainer} ${onScroll ? 'overflow-x-hidden' : 'overflow-x-auto'}`} ref={ref}>
+      <div className={`flex w-full gap-5 ${styles.scrollContainer} ${onScroll ? 'overflow-x-hidden' : styles.scrollLateralContainer}`} ref={ref}>
         {data.map(({ background_image: backgroundImage, image_background: imageBackground, name, id, image }, idx) => (
           <Link
             href={`/${href}/${id}`}

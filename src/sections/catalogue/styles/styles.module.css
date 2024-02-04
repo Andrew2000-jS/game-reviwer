@@ -1,11 +1,11 @@
-.gamesTitle {
+.title {
   cursor: pointer;
   display: flex;
   align-items: center;
   width: max-content;
 }
 
-.gamesTitle:hover .arrow {
-  transition: all 0.3s ease;
+.title:hover .arrow {
+  transition: all 0.2s ease;
   transform: translateX(5px);
 }

@@ -1,9 +1,6 @@
-export type RootPlatform = {
-  count: number
-  next: string
-  previous: string
-  results: Platform[]
-}
+import { AggregateRoot } from '@/shared'
+
+export type RootPlatform = AggregateRoot<Platform>
 
 export type Platform = {
   id: number

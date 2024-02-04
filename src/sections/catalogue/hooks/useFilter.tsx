@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 function useFilter<T> (fn: any, args: any[]) {
-  const [data, setData] = useState<T[]>([])
+  const [data, setData] = useState<T | []>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

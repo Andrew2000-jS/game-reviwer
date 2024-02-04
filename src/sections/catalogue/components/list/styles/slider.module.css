@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 500px;
-  margin-top: -25%;
+  margin-top: 2em;
 }
 
 .slide {
@@ -40,4 +39,58 @@
   z-index: 10;
   bottom: 0;
   padding: 1em;
+  width: 100%;
+}
+
+.points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 1rem;
+  gap: 0.3em;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: auto;
+  }
+
+  .slide {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .content h2 {
+    font-size: 100%;
+  }
+
+  .content p {
+    font-size: 80%;
+  }
+
+  .content a {
+    display: none;
+  }
+
+  .point,
+  .crrPoint {
+    background: #fff;
+    border-radius: 100%;
+    border: none;
+  }
+
+  .point {
+    height: 0.3rem;
+    width: 0.3rem;
+  }
+
+  .crrPoint {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+
+  .cImages {
+    display: none;
+  }
 }

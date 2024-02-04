@@ -1,9 +1,6 @@
-export type RootStore = {
-  count: number
-  next: string
-  previous: string
-  results: Store[]
-}
+import { AggregateRoot } from '@/shared'
+
+export type RootStore = AggregateRoot<Store>
 
 export type Store = {
   id: number

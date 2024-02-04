@@ -3,7 +3,7 @@
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(4, 1fr);
   grid-template-areas:
-    "header header header header"
+    "header header header"
     "list list list list"
     "list list list list";
 }
@@ -11,6 +11,7 @@
 .header {
   grid-area: header;
   width: 100%;
+  margin-bottom: 1em;
 }
 
 .lateral {
@@ -21,4 +22,10 @@
 .list {
   grid-area: list;
   width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    display: block;
+  }
 }

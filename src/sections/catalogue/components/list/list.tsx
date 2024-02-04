@@ -1,30 +1,53 @@
-import { HorizontalScroll } from '@/shared'
-import { GoChevronRight } from 'react-icons/go'
+import { useScroll } from '@/shared/hooks'
+import { Middle } from '../middle'
 
+import { ListInterface } from '../../types'
 import Slider from './slider'
+import SliderSkeleton from './slider-skeleton'
+import { Bottom } from '../bottom'
 
-import styles from './styles/list.module.css'
+function List ({
+  games,
+  publishers,
+  stores,
+  genres,
+  platforms,
+  creators
+}: ListInterface) {
+  const { scrollRef, scrollCheck, scrollEnd, scrollX, slide } = useScroll()
+  const adapter = (e: any) => e.data.results
 
-function List ({ games }: { games: any }) {
   return (
     <>
       <div className="w-full">
         <div>
-          <Slider data={games.data.results} />
+          {games.loading ? (
+            <SliderSkeleton />
+          ) : (
+            <Slider data={adapter(games)} />
+          )}
         </div>
-        <div className="pt-5">
-          <div>
-            <h3 className={styles.gamesTitle}>
-              <span className="text-xl">All Games</span>
-              <span className={styles.arrow}>
-                <GoChevronRight />
-              </span>
-            </h3>
-          </div>
-          <div>
-            <HorizontalScroll data={games.data.results} />
-          </div>
-        </div>
+        <Middle
+          games={games}
+          publishers={publishers}
+          slide={slide}
+          scrollCheck={scrollCheck}
+          scrollEnd={scrollEnd}
+          scrollRef={scrollRef}
+          scrollX={scrollX}
+        />
+        <Bottom
+          genres={adapter(genres)}
+          platforms={adapter(platforms)}
+          stores={adapter(stores)}
+          creators={adapter(creators)}
+          loaders={[
+            genres.loading,
+            stores.loading,
+            platforms.loading,
+            creators.loading
+          ]}
+        />
       </div>
     </>
   )

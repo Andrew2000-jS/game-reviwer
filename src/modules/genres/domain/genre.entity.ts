@@ -1,11 +1,8 @@
-export type RootGenres = {
-  count: number
-  next: string
-  previous: string
-  results: Genres[]
-}
+import { AggregateRoot } from '@/shared'
 
-export type Genres = {
+export type RootGenre = AggregateRoot<Genre>
+
+export type Genre = {
   id: number
   name: string
   slug: string
@@ -13,6 +10,6 @@ export type Genres = {
   image_background: string
 }
 
-export type Detail = Genres & {
+export type Detail = Genre & {
   description: string
 }

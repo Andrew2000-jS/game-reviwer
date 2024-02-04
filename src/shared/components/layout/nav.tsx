@@ -21,7 +21,7 @@ export default function App () {
   const menuItems = ['Home', 'About Us', 'Portfolio', 'News', 'Contact Us']
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="full">
+    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="full" className='bg-[#18181C]'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -66,7 +66,7 @@ export default function App () {
               <Link
                 className={`w-full ${
                   index === 2
-                    ? 'text-orange-500'
+                    ? 'text-[#006FEE]'
                     : index === menuItems.length - 1
                     ? 'text-red-500'
                     : 'text-white'

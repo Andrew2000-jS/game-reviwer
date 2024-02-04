@@ -1,9 +1,6 @@
-export interface RootPusblisher {
-  count: number
-  next: string
-  previous: string
-  results: Pusblisher[]
-}
+import { AggregateRoot } from '@/shared'
+
+export type RootPusblisher = AggregateRoot<Pusblisher>
 
 export type Pusblisher = {
   id: number

@@ -5,28 +5,30 @@ import { Button, Image } from '@nextui-org/react'
 import Link from 'next/link'
 
 import styles from './styles/slider.module.css'
+import { Game } from '@/modules/games/domain'
 
-export default function Slider ({ data = [] }: { data: any[] }) {
+export default function Slider ({ data }: { data: unknown }) {
+  const dataArray: Game[] = Array.isArray(data) ? data : []
   const [slide, setSlide] = useState(0)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setSlide((prevSlide) => (prevSlide + 1) % data.length)
+      setSlide((prevSlide) => (prevSlide + 1) % dataArray.length)
     }, 4000)
 
     return () => clearInterval(intervalId)
-  }, [data.length])
+  }, [dataArray.length])
 
   return (
     <div className={styles.carousel}>
-      <div className="flex w-[70%] relative">
-        {data.map(({ background_image: backgroundImage, name, id }, idx) => (
+      <div className="flex w-full relative md:w-[70%]">
+        {dataArray.map(({ background_image: backgroundImage, name, id }, idx) => (
           <>
             <Image
               src={backgroundImage}
               alt={name}
-              key={idx}
-              width={1000}
+              key={`${name}-${idx}`}
+              width="100%"
               height={500}
               className={slide === idx ? styles.slide : 'hidden'}
             />
@@ -38,12 +40,17 @@ export default function Slider ({ data = [] }: { data: any[] }) {
               <Link href={`/games/${id}`}>
                 <Button color="primary">See more</Button>
               </Link>
+              <div className={styles.points}>
+                {dataArray.map((_, idx) => (
+                  <button className={slide === idx ? styles.crrPoint : styles.point} key={idx}></button>
+                ))}
+              </div>
             </div>
           </>
         ))}
       </div>
-      <div className="w-[30%]">
-        {data.map(({ background_image: backgroundImage, name }, idx) => (
+      <div className={`w-[30%] ${styles.cImages}`}>
+        {dataArray.map(({ background_image: backgroundImage, name }, idx) => (
           <div
             key={idx}
             className={slide === idx ? styles.indicator : styles.indicators}

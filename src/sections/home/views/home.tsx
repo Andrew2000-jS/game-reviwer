@@ -1,10 +1,10 @@
 import { RootGame } from '@/modules/games/domain'
-import { RootGenres } from '@/modules/genres/domain'
+import { RootGenre } from '@/modules/genres/domain'
 import { Bottom, Middle, Top } from '../components'
 
 import styles from '@/shared/styles/globals.module.css'
 
-function Home ({ games, genres }: { games: RootGame, genres: RootGenres }) {
+function Home ({ games, genres }: { games: RootGame, genres: RootGenre }) {
   return (
     <div className={styles.container}>
       <Top />

@@ -22,11 +22,11 @@ function Publishers ({ publishers, loading }: MiddlePublisherType) {
             </Button>
           </div>
         </div>
-        <div className="flex items-center justify-center my-14 gap-5">
+        <div className="flex flex-wrap items-center justify-center my-14 gap-5 md:flex-nowrap">
           {loading ? (
             <PublisherSkeleton />
           ) : (
-            publishers.map(
+            publishers.data.results.map(
               ({
                 image_background: imageBackground,
                 name,
@@ -39,7 +39,7 @@ function Publishers ({ publishers, loading }: MiddlePublisherType) {
                 <div key={id}>
                   <Image
                     src={imageBackground}
-                    width={350}
+                    width={450}
                     alt={name}
                     isZoomed
                     className="h-[250px] w-[450px] object-cover"
@@ -49,7 +49,6 @@ function Publishers ({ publishers, loading }: MiddlePublisherType) {
               )
             )
           )}
-
         </div>
       </div>
     </div>

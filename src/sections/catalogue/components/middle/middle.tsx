@@ -16,7 +16,7 @@ function Middle ({
   return (
     <>
       <Games
-        games={games.data.results}
+        games={games}
         slide={slide}
         scrollCheck={scrollCheck}
         scrollEnd={scrollEnd}
@@ -25,7 +25,7 @@ function Middle ({
         loading={games.loading}
       />
       <Publishers
-        publishers={publishers.data.results}
+        publishers={publishers}
         loading={publishers.loading}
       />
     </>

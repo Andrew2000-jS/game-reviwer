@@ -6,7 +6,7 @@ import styles from './styles/styles.module.css'
 import Link from 'next/link'
 
 interface Props {
-  data: any[]
+  data: unknown
   onScroll?: any
   href: string
   width: string
@@ -17,11 +17,12 @@ interface Props {
 }
 
 // eslint-disable-next-line react/display-name
-const HorizontalScroll = forwardRef<HTMLDivElement, Props>(({ data = [], href, width, height, onScroll, textColor = '#fff', isCreator = false, imgRadius = 'sm' }, ref) => {
+const HorizontalScroll = forwardRef<HTMLDivElement, Props>(({ data, href, width, height, onScroll, textColor = '#fff', isCreator = false, imgRadius = 'sm' }, ref) => {
+  const dataArray = Array.isArray(data) ? data : []
   return (
     <div className={styles.container} onScroll={onScroll} >
       <div className={`flex w-full gap-5 ${styles.scrollContainer} ${onScroll ? 'overflow-x-hidden' : styles.scrollLateralContainer}`} ref={ref}>
-        {data.map(({ background_image: backgroundImage, image_background: imageBackground, name, id, image }, idx) => (
+        {dataArray.map(({ background_image: backgroundImage, image_background: imageBackground, name, id, image }, idx) => (
           <Link
             href={`/${href}/${id}`}
             key={idx}
@@ -29,13 +30,13 @@ const HorizontalScroll = forwardRef<HTMLDivElement, Props>(({ data = [], href, w
           >
             <Image
               src={isCreator ? image : backgroundImage || imageBackground}
-              width={300}
+              width={500}
               alt={name}
               radius={imgRadius}
               isZoomed
               className={`object-cover w-[${width}] h-[${height}]`}
             />
-            <p className={`pt-2 w-[${width}] text-[${textColor}]`}>{name}</p>
+            <p className={`pt-2 w-[200px] text-sm text-[${textColor}]`}>{name}</p>
           </Link>
         ))}
       </div>

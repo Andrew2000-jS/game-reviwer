@@ -56,7 +56,7 @@ function Games ({
           />
         ) : (
           <HorizontalScroll
-            data={games}
+            data={games.data.results}
             ref={scrollRef}
             href="games"
             onScroll={scrollCheck}

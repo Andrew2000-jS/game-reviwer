@@ -1,9 +1,6 @@
-export type RootCreator = {
-  count: number
-  next: string
-  previous: string
-  results: Creator[]
-}
+import { AggregateRoot } from '@/shared'
+
+export type RootCreator = AggregateRoot<Creator>
 
 export type Creator = {
   id: string

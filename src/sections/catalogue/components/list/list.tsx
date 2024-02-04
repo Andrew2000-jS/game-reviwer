@@ -15,7 +15,6 @@ function List ({
   creators
 }: ListInterface) {
   const { scrollRef, scrollCheck, scrollEnd, scrollX, slide } = useScroll()
-
   const adapter = (e: any) => e.data.results
 
   return (

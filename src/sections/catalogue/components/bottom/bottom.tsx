@@ -21,9 +21,9 @@ function bottom ({
 }: BottomInterface) {
   return (
     <div className="mt-28 mb-10">
-      <div className="w-full flex justify-between items-center gap-5">
-        <div className="flex-1 border-r-1 border-r-gray-600 pr-5">
-          <div className="w-full flex items-center justify-between mb-5">
+      <div className="w-full flex justify-between items-center gap-5 overflow-x-auto md:overflow-x-hidden">
+        <div className="border-r-1 border-r-gray-600 md:flex-1 pr-5">
+          <div className="w-ful flex items-center justify-between mb-5">
             <h3 className="font-bold">Genres</h3>
             <Button variant="ghost" color="primary">
               See more
@@ -37,7 +37,7 @@ function bottom ({
             )}
           </div>
         </div>
-        <div className="flex-1 border-r-1 border-r-gray-600 pr-5">
+        <div className="border-r-1 border-r-gray-600 md:flex-1 pr-5">
           <div className="flex items-center justify-between mb-5">
             <h3 className="font-bold">Stores</h3>
             <Button variant="ghost" color="primary">
@@ -52,7 +52,7 @@ function bottom ({
             )}
           </div>
         </div>
-        <div className="flex-1">
+        <div className="md:flex-1">
           <div className="w-full flex items-center justify-between mb-5">
             <h3 className="font-bold">Platforms</h3>
             <Button variant="ghost" color="primary">
@@ -79,12 +79,12 @@ function bottom ({
         </div>
         <div>
           {loaders[3] ? (
-            <ScrollSkeleton height="250px" width="250px" />
+            <ScrollSkeleton height="250px" width="200px" />
           ) : (
             <HorizontalScroll
               data={creators}
               height="250px"
-              width="250px"
+              width="200px"
               href="creators"
               isCreator={true}
               imgRadius="sm"

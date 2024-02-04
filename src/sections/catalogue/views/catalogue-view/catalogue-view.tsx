@@ -7,6 +7,14 @@ import catalogueStyles from './styles/styles.module.css'
 
 import { useFilter } from '../../hooks'
 
+import { ListType } from '../../types'
+import { RootGenre } from '@/modules/genres/domain'
+import { RootPusblisher } from '@/modules/publishers/domain'
+import { RootCreator } from '@/modules/creators/domain'
+import { RootPlatform } from '@/modules/platforms/domain'
+import { RootStore } from '@/modules/stores/domain'
+import { RootGame } from '@/modules/games/domain'
+
 import { gameRepository } from '@/modules/games/infrastructure'
 import { genresRepository } from '@/modules/genres/infrastructure'
 import { pusblisherRepository } from '@/modules/publishers/infrastructure'
@@ -22,12 +30,12 @@ import { getGenres } from '@/modules/genres/application'
 import { getPublishers } from '@/modules/publishers/application'
 
 function CatalogueView () {
-  const genres = useFilter(getGenres, [genresRepository(), 5])
-  const publishers = useFilter(getPublishers, [pusblisherRepository(), 3])
-  const creators = useFilter(getCreators, [creatorRepository(), 5])
-  const platforms = useFilter(getPlatforms, [platformRepository(), 5])
-  const stores = useFilter(getStores, [storeRepository(), 5])
-  const games = useFilter(getGames, [gameRepository(), 5])
+  const genres = useFilter<RootGenre>(getGenres, [genresRepository(), 5]) as ListType<RootGenre>
+  const publishers = useFilter(getPublishers, [pusblisherRepository(), 3]) as ListType<RootPusblisher>
+  const creators = useFilter(getCreators, [creatorRepository(), 5]) as ListType<RootCreator>
+  const platforms = useFilter(getPlatforms, [platformRepository(), 5]) as ListType<RootPlatform>
+  const stores = useFilter(getStores, [storeRepository(), 5]) as ListType<RootStore>
+  const games = useFilter(getGames, [gameRepository(), 5]) as ListType<RootGame>
 
   return (
     <div className={styles.container}>
